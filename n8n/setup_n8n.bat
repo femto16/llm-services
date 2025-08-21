@@ -1,4 +1,4 @@
-pushd docker
+pushd %~dp0docker
 
 : encryption keyの生成
 for /f %%i in ('wsl openssl rand -hex 32') do (

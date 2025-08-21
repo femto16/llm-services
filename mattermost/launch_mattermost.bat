@@ -1,5 +1,5 @@
-pushd docker
+pushd %~dp0docker
 
-wsl docker compose -f docker-compose.yml up -d
+wsl docker compose up -d
 
 popd
