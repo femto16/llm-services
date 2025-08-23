@@ -1,0 +1,63 @@
+{
+  "name": "SamplePost",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "efe7a9c7-14eb-4e65-b775-f57f5362dd2d",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "channelId": "kdit3j5szf83fegydqu57ii7ho",
+        "message": "=Mattermost投稿テスト\nhello",
+        "attachments": [],
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.mattermost",
+      "typeVersion": 1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "6155b4c6-c439-449d-875e-f2a32084b94e",
+      "name": "Post a message",
+      "credentials": {
+        "mattermostApi": {
+          "id": "YL4ckJZuVXgpDl8f",
+          "name": "Mattermost account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Post a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "79c334da-a8f8-475d-a6e4-6f263efcda5c",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "aa8ad8a55c700bd1e5c8b6f3f6e8260b66454356d8217243ad1ae873e6947fec"
+  },
+  "id": "a9de6FGdlSbgrnYn",
+  "tags": []
+}
