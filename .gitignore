@@ -1,3 +1,4 @@
 .env
 mattermost/docker/volumes
 n8n/docker/.n8n
+private/
