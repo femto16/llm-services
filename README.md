@@ -81,7 +81,7 @@ LLMのbot環境を作成するサービス郡です。
 - トップページに戻り、「SampleWebhook」ワークフローをActiveに切り替える
 - 再び、Test Channelで「テスト こんにちは」という内容で投稿し、ワークフローが起動するのを確認する
 
-## APIキー発行
+## APIキー発行(任意)
 - 左下のアカウントメニュー > n8n API > Create an API Key
 - Labelは「test」、Expirationは「No Expiration」で発行
 - python-setting-scripts\.env の N8N_API_KEY にAPI Keyを貼り付ける
@@ -89,9 +89,15 @@ LLMのbot環境を作成するサービス郡です。
 
 # データの保存場所
 ## Mattermost
-mattermost/docker/volumes/app
+WSL側に保存されている
+- /var/lib/docker/volumes/docker_mattermost-bleve-indexes
+- /var/lib/docker/volumes/docker_mattermost-client-plugins
+- /var/lib/docker/volumes/docker_mattermost-config
+- /var/lib/docker/volumes/docker_mattermost-data
+- /var/lib/docker/volumes/docker_mattermost-logs
+- /var/lib/docker/volumes/docker_mattermost-plugins
 ### 削除コマンド
-rmdir mattermost/docker/volumes/app
+wsl docker volume rm docker_mattermost-bleve-indexes docker_mattermost-client-plugins docker_mattermost-config docker_mattermost-data docker_mattermost-logs docker_mattermost-plugins
 
 ## postgresql
 ### 保存場所

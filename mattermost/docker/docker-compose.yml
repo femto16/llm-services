@@ -34,12 +34,20 @@ services:
     tmpfs:
       - /tmp
     volumes:
-      - ${MATTERMOST_CONFIG_PATH}:/mattermost/config:rw
-      - ${MATTERMOST_DATA_PATH}:/mattermost/data:rw
-      - ${MATTERMOST_LOGS_PATH}:/mattermost/logs:rw
-      - ${MATTERMOST_PLUGINS_PATH}:/mattermost/plugins:rw
-      - ${MATTERMOST_CLIENT_PLUGINS_PATH}:/mattermost/client/plugins:rw
-      - ${MATTERMOST_BLEVE_INDEXES_PATH}:/mattermost/bleve-indexes:rw
+      #- ${MATTERMOST_CONFIG_PATH}:/mattermost/config:rw
+      #- ${MATTERMOST_DATA_PATH}:/mattermost/data:rw
+      #- ${MATTERMOST_LOGS_PATH}:/mattermost/logs:rw
+      #- ${MATTERMOST_PLUGINS_PATH}:/mattermost/plugins:rw
+      #- ${MATTERMOST_CLIENT_PLUGINS_PATH}:/mattermost/client/plugins:rw
+      #- ${MATTERMOST_BLEVE_INDEXES_PATH}:/mattermost/bleve-indexes:rw
+      # Windowsでボリュームマウントする場合、Permission deniedの問題があるので
+      # WSLファイルシステムでボリュームを作成するように
+      - mattermost-config:/mattermost/config:rw
+      - mattermost-data:/mattermost/data:rw
+      - mattermost-logs:/mattermost/logs:rw
+      - mattermost-plugins:/mattermost/plugins:rw
+      - mattermost-client-plugins:/mattermost/client/plugins:rw
+      - mattermost-bleve-indexes:/mattermost/bleve-indexes:rw
       # When you want to use SSO with GitLab, you have to add the cert pki chain of GitLab inside Alpine
       # to avoid Token request failed: certificate signed by unknown authority 
       # (link: https://github.com/mattermost/mattermost-server/issues/13059 and https://github.com/mattermost/docker/issues/34)
@@ -68,4 +76,12 @@ services:
       - 8443:8443/udp
       - 8443:8443/tcp
 volumes:
+  # Windowsでボリュームマウントする場合、Permission deniedの問題があるので
+  # WSLファイルシステムでボリュームを作成するように
   postgresql-data:
+  mattermost-config:
+  mattermost-data:
+  mattermost-logs:
+  mattermost-plugins:
+  mattermost-client-plugins:
+  mattermost-bleve-indexes:
