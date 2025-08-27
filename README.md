@@ -1,15 +1,22 @@
 # LLM-Services
-LLMのbot環境を作成するサービス郡です。
+LLMのbot環境を作成するサービスです。
 
 - Mattermost
     - 通知、チャット、n8nなどのトリガー実行用プラットフォームとして利用
 - n8n
     - ワークフローのトリガー実行、定期実行を行う
+    - LLMと連携しながらデータ処理を行う
 
-# dockerのセットアップ
-- WSLのインストール
-- docker環境の作成
+# WSL docker環境のセットアップ
+## WSLのインストール(WSL未インストールの場合)
+- setup-docker\install_wsl.bat を実行
+- ユーザー名とパスワードを登録する
+- exitでWSLから抜ける
 
+## dockerのインストール
+- setup-docker\setup_docker.bat を実行
+- setup-docker\test_docker.bat を実行
+- hello-worldのコンテナが起動するのを確認する
 
 
 # Mattermostのセットアップ
