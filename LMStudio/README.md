@@ -18,10 +18,8 @@
 - チャット画面でモデルが動作することを確認する
 ## サーバ起動
 - Developer > ラジオボタンをONにしてサーバ起動
-- 用途に合わせてSetingsを変更する
-    - 外部から接続可能にする場合
-        - Serve on Local Network: ON
-    - モデルの自動アンロード機能を切ってずっとロードさせる場合
-        - Auto unload unused JIT loaded modelsをOFFにする
+- Settingsを変更する
+    - 外部から接続可能にするため、Serve on Local NetworkをONにする
+    - (任意)モデルの自動アンロード機能を切ってずっとロードさせる場合は、Auto unload unused JIT loaded modelsをOFFにする
 # サーバテスト
 - test_server.batを実行してレスポンスが返るのを確認する
